@@ -1,0 +1,36 @@
+.custombtn {
+  padding: 5px 10px 5px 10px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  margin: 5px 0 5px 0;
+  cursor: pointer;
+}
+
+.custombtn_default {
+  background-color: gray;
+  color: white;
+}
+
+.custombtn_login,
+.custombtn_signup {
+  color: white;
+  background-color: #79c2df;
+  width: 290px;
+  height: 35px;
+}
+
+.custombtn_add {
+  color: white;
+  background-color: #08a83b;
+}
+
+.custombtn_delete {
+  color: white;
+  background-color: #fa4039;
+}
+
+.custom_modify {
+  color: white;
+  background-color: #fa7f39;
+}
