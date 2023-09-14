@@ -8,14 +8,16 @@
 
 .addtodo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
 .add_input {
   width: 220px;
-  height: 14px;
+  height: 22px;
+  padding-left: 10px;
   border-radius: 20px;
   border: 1px solid gray;
+  margin-right: 20px;
 }
