@@ -44,9 +44,18 @@ const Login: React.FC = () => {
           console.log(err);
         });
     } else {
-      window.alert("아이디 또는 비밀번호를 확인해 주세요");
+    }
+
+    if (logincheck) {
+      window.alert("아이디 비밀번호를 입력해 주세요.");
     }
   };
+
+  // logincheck
+  const [logincheck, setLoginCheck] = useState(true);
+  if (emailRegex.test(loginForm.email) && loginForm.password.length >= 8) {
+    setLoginCheck(false);
+  }
 
   return (
     <div className="loginform">
@@ -58,6 +67,7 @@ const Login: React.FC = () => {
         testid="signin-button"
         button_type="submit"
         handler={longinHandler}
+        disabled={logincheck}
       />
       <CustomButton
         type="tosign"

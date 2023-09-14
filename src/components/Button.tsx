@@ -7,6 +7,7 @@ const CustomButton = ({
   button_type,
   testid,
   handler,
+  disabled = false,
 }: btnType) => {
   // btn type 지정
   const btnType = ["login", "signup", "add", "delete", "modify"].includes(type)
@@ -19,12 +20,16 @@ const CustomButton = ({
       type={button_type}
       data-testid={testid}
       onClick={handler}
+      disabled={disabled} // disabled 값을 여기에 전달
     >
       {text}
     </button>
   );
 };
 
-CustomButton.defaultProps = { type: "default" };
+CustomButton.defaultProps = {
+  type: "default",
+  disabled: false,
+};
 
 export default CustomButton;
