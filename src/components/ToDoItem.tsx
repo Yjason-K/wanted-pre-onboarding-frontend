@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
 import { Todo } from "../lib/types/todo";
 import CustomButton from "./Button";
@@ -19,6 +19,7 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ item, onDel }) => {
   };
 
   // todo 수정을 취소하는 경우
+  const moifyRef = useRef<HTMLInputElement | null>(null);
   const onCancelEdit = () => {
     if (window.confirm("할일 수정을 취소하시겠습니까??")) {
       setLocalContent(item.todo);
@@ -28,28 +29,37 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ item, onDel }) => {
 
   // todo 수정 확정
   const onConfrimEdit = async () => {
-    const token = localStorage.getItem("token");
-    const parsedToken = token ? JSON.parse(token) : null;
-    await axios({
-      method: "put",
-      url: `${process.env.REACT_APP_WANTED_API}/todos/${todoItem.id}`,
-      headers: {
-        Authorization: `Bearer ${parsedToken}`,
-        "Content-Type": "application/json",
-      },
-      data: { todo: localContent, isCompleted: todoItem.isCompleted },
-    })
-      .then((res) => {
-        setTodoItem((prevItem) => ({
-          ...prevItem,
-          todo: localContent,
-        }));
-        setIsModify(false);
+    if (localContent !== "") {
+      if (localContent !== "") {
+      }
+      const token = localStorage.getItem("token");
+      const parsedToken = token ? JSON.parse(token) : null;
+      await axios({
+        method: "put",
+        url: `${process.env.REACT_APP_WANTED_API}/todos/${todoItem.id}`,
+        headers: {
+          Authorization: `Bearer ${parsedToken}`,
+          "Content-Type": "application/json",
+        },
+        data: { todo: localContent, isCompleted: todoItem.isCompleted },
       })
-      .catch((err) => {
-        window.alert("할일을 수정하지 못하였습니다.");
-        console.log(err);
-      });
+        .then((res) => {
+          setTodoItem((prevItem) => ({
+            ...prevItem,
+            todo: localContent,
+          }));
+          setIsModify(false);
+        })
+        .catch((err) => {
+          window.alert("할일을 수정하지 못하였습니다.");
+          console.log(err);
+        });
+    } else {
+      window.alert("할일을 입력해 주세요!");
+      if (moifyRef.current) {
+        moifyRef.current.focus();
+      }
+    }
   };
 
   // modifyhandler
@@ -116,6 +126,7 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ item, onDel }) => {
             type="text"
             data-testid="modify-input"
             value={localContent}
+            ref={moifyRef}
             onChange={onEditChange}
           />
         ) : (
