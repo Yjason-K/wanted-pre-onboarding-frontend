@@ -10,6 +10,7 @@
 .custombtn_default {
   background-color: gray;
   color: white;
+  font-size: 8px;
 }
 
 .custombtn_login,
@@ -23,14 +24,17 @@
 .custombtn_add {
   color: white;
   background-color: #08a83b;
+  font-size: 12px;
 }
 
 .custombtn_delete {
   color: white;
   background-color: #fa4039;
+  font-size: 8px;
 }
 
-.custom_modify {
+.custombtn_modify {
   color: white;
   background-color: #fa7f39;
+  font-size: 8px;
 }

@@ -28,7 +28,7 @@ const SignUp: React.FC = () => {
     if (emailRegex.test(loginForm.email) && loginForm.password.length >= 8) {
       await axios({
         method: "post",
-        url: `${process.env.REACT_APP_WANTED_API}/auth/signin`,
+        url: `${process.env.REACT_APP_WANTED_API}/auth/signup`,
         headers: { "Content-Type": "application/json" },
         data: {
           email: loginForm.email,

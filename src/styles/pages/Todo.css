@@ -1,0 +1,21 @@
+.todo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 340px;
+}
+
+.addtodo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add_input {
+  width: 220px;
+  height: 14px;
+  border-radius: 20px;
+  border: 1px solid gray;
+}

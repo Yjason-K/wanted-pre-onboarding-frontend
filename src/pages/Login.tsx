@@ -29,6 +29,7 @@ const Login: React.FC = () => {
       await axios({
         method: "post",
         url: `${process.env.REACT_APP_WANTED_API}/auth/signin`,
+        headers: { "Content-Type": "application/json" },
         data: {
           email: loginForm.email,
           password: loginForm.password,
@@ -36,7 +37,7 @@ const Login: React.FC = () => {
       })
         .then((res) => {
           localStorage.setItem("token", JSON.stringify(res.data.access_token));
-          navigate("/too", { replace: true });
+          navigate("/todo", { replace: true });
         })
         .catch((err) => {
           window.alert("이메일 또는 비밀번호를 확인해 주세요.");
