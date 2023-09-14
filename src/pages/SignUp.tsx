@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/pages/Login.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { login } from "../lib/types/login";
 import axios from "axios";
 
@@ -9,6 +9,14 @@ import CustomButton from "../components/Button";
 import SiginForm from "../components/SignForm";
 
 const SignUp: React.FC = () => {
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const parsedToken = token ? JSON.parse(token) : null;
+    if (parsedToken) {
+      navigate("/todo", { replace: true });
+    }
+  }, []);
+
   // 회원가입 입력 폼
   const [loginForm, setLoginForm] = useState<login>({
     email: "",

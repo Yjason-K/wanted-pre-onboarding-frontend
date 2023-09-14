@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "../styles/pages/Login.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { login } from "../lib/types/login";
 import axios from "axios";
 
@@ -9,6 +9,14 @@ import CustomButton from "../components/Button";
 import SiginForm from "../components/SignForm";
 
 const Login: React.FC = () => {
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const parsedToken = token ? JSON.parse(token) : null;
+    if (parsedToken) {
+      navigate("/todo", { replace: true });
+    }
+  }, []);
+
   // 로그인 입력 폼
   const [loginForm, setLoginForm] = useState<login>({
     email: "",
@@ -45,17 +53,17 @@ const Login: React.FC = () => {
         });
     } else {
     }
-
-    if (logincheck) {
-      window.alert("아이디 비밀번호를 입력해 주세요.");
-    }
   };
 
   // logincheck
   const [logincheck, setLoginCheck] = useState(true);
-  if (emailRegex.test(loginForm.email) && loginForm.password.length >= 8) {
-    setLoginCheck(false);
-  }
+  useEffect(() => {
+    if (emailRegex.test(loginForm.email) && loginForm.password.length >= 8) {
+      setLoginCheck(false);
+    } else {
+      setLoginCheck(true);
+    }
+  }, [loginForm]);
 
   return (
     <div className="loginform">
