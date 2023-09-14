@@ -21,9 +21,11 @@ const ToDolists: React.FC<ToDolistsProps> = ({ todoitems }) => {
     <div className="todolists">
       <h3>Todo List 📒</h3>
       <div className="todoitmens">
-        {allitems.map((it) => (
-          <ToDoItem key={it.id} item={it} onDel={onDeleteHanlder} />
-        ))}
+        <ul>
+          {allitems.map((it) => (
+            <ToDoItem key={it.id} item={it} onDel={onDeleteHanlder} />
+          ))}
+        </ul>
       </div>
     </div>
   );

@@ -109,6 +109,7 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ item, onDel }) => {
           type="checkbox"
           checked={todoItem.isCompleted}
           onChange={checkHandler}
+          className="inputcheck"
         />
         {isModify ? (
           <input
@@ -118,37 +119,39 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ item, onDel }) => {
             onChange={onEditChange}
           />
         ) : (
-          <span>{todoItem.todo}</span>
+          <span className="todospan">{todoItem.todo}</span>
         )}
       </label>
-      <CustomButton
-        text="수정하기"
-        type="modify"
-        button_type="button"
-        testid="modify-button"
-        handler={() => {
-          {
-            !isModify ? setIsModify(true) : onConfrimEdit();
-          }
-        }}
-      />
-      {!isModify ? (
+      <div className="btnwrap">
         <CustomButton
-          text="삭제하기"
-          type="delete"
+          text="수정하기"
+          type="modify"
           button_type="button"
           testid="modify-button"
-          handler={delHandler}
+          handler={() => {
+            {
+              !isModify ? setIsModify(true) : onConfrimEdit();
+            }
+          }}
         />
-      ) : (
-        <CustomButton
-          text="취소"
-          type="cancel"
-          button_type="button"
-          testid=""
-          handler={onCancelEdit}
-        />
-      )}
+        {!isModify ? (
+          <CustomButton
+            text="삭제하기"
+            type="delete"
+            button_type="button"
+            testid="modify-button"
+            handler={delHandler}
+          />
+        ) : (
+          <CustomButton
+            text="취소"
+            type="cancel"
+            button_type="button"
+            testid=""
+            handler={onCancelEdit}
+          />
+        )}
+      </div>
     </li>
   );
 };

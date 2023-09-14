@@ -21,3 +21,26 @@
   border: 1px solid gray;
   margin-right: 20px;
 }
+
+.todolists {
+  width: 100%;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.todoitem {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .inputcheck {
+  margin-top: 12px;
+  margin-bottom: 12px;
+} */
+
+/* .todospan {
+  padding-top: 8px;
+  padding-bottom: 8px;
+} */
