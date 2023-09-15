@@ -25,7 +25,7 @@ const SignUp: React.FC = () => {
   // longinHandler
   const navigate = useNavigate();
   const tologinHandler = () => {
-    navigate("/login");
+    navigate("/signin");
   };
 
   // eamil regex
@@ -56,6 +56,16 @@ const SignUp: React.FC = () => {
     }
   };
 
+  // logincheck
+  const [logincheck, setLoginCheck] = useState(true);
+  useEffect(() => {
+    if (emailRegex.test(loginForm.email) && loginForm.password.length >= 8) {
+      setLoginCheck(false);
+    } else {
+      setLoginCheck(true);
+    }
+  }, [loginForm]);
+
   return (
     <div className="loginform">
       <h2>회원가입</h2>
@@ -66,6 +76,7 @@ const SignUp: React.FC = () => {
         testid="signup-button"
         button_type="submit"
         handler={longinHandler}
+        disabled={logincheck}
       />
       <CustomButton
         type="tosign"

@@ -10,6 +10,7 @@ function App() {
       <div className="App">
         <Routes>
           {/* 처음 접속시 로그인 페이지로 이동 */}
+          <Route path="/main" element={<Navigate to="/signin" replace />} />
           <Route path="/" element={<Navigate to="/signin" replace />} />
           {/* 로그인 및 회원가입*/}
           <Route path="/signup" element={<SignUp />} />

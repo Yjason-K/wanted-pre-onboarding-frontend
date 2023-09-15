@@ -10,27 +10,6 @@ import ToDolists from "../components/ToDoLists";
 const ToDo = () => {
   // todoLists
   const [todoLists, setTodoLists] = useState<Todo[]>([]);
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   const parsedToken = token ? JSON.parse(token) : null;
-  //   const getTodoList = async () => {
-  //     await axios({
-  //       method: "get",
-  //       url: `${process.env.REACT_APP_WANTED_API}/todos`,
-  //       headers: {
-  //         Authorization: `Bearer ${parsedToken}`,
-  //         "Content-Type": "application/json",
-  //       },
-  //     })
-  //       .then((res) => {
-  //         setTodoLists(res.data);
-  //       })
-  //       .catch((err) => {
-  //         window.alert("할일을 불러오지 못하였습니다!!");
-  //       });
-  //   };
-  //   getTodoList();
-  // }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
