@@ -138,19 +138,16 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ item, onDel }) => {
           text="수정하기"
           type="modify"
           button_type="button"
-          testid="modify-button"
-          handler={() => {
-            {
-              !isModify ? setIsModify(true) : onConfrimEdit();
-            }
-          }}
+          testid={!isModify ? "modify-button" : "submit-button"}
+          handler={() => (!isModify ? setIsModify(true) : onConfrimEdit())}
         />
+
         {!isModify ? (
           <CustomButton
             text="삭제하기"
             type="delete"
             button_type="button"
-            testid="modify-button"
+            testid="delete-button"
             handler={delHandler}
           />
         ) : (
@@ -158,7 +155,7 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ item, onDel }) => {
             text="취소"
             type="cancel"
             button_type="button"
-            testid=""
+            testid="cancel-button"
             handler={onCancelEdit}
           />
         )}
