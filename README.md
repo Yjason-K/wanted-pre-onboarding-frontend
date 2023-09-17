@@ -3,17 +3,22 @@
 
 [배포링크](d3fou63o6mmw18.cloudfront.net)
 
+https://github.com/Yjason-K/wanted-pre-onboarding-frontend/assets/81736873/84204739-1ed7-4126-b4cd-a023cbaaf649
+
+
 ### 로컬에서 사용시
 >  - npm install & npm start
+
+
 
 
 # 폴더 구조
 ```
 src/
- ├── components/
+ ├── components/ (버튼 컴포넌트, 로그인 컴포넌트... etc)
  ├── lib/
- │   └──types/
- ├── styles/
+ │   └──types/ (*.ts / type 정의)
+ ├── styles/ (*.css)
  ├── pages/
  ├── App.tsx
  ├── App.css
