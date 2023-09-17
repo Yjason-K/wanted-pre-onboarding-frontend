@@ -45,7 +45,7 @@ const SignUp: React.FC = () => {
       })
         .then((res) => {
           localStorage.setItem("token", JSON.stringify(res.data.access_token));
-          navigate("/login", { replace: true });
+          navigate("/signin", { replace: true });
         })
         .catch((err) => {
           window.alert("이메일 또는 비밀번호를 확인해 주세요.");

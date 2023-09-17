@@ -141,7 +141,6 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ item, onDel }) => {
           testid={!isModify ? "modify-button" : "submit-button"}
           handler={() => (!isModify ? setIsModify(true) : onConfrimEdit())}
         />
-
         {!isModify ? (
           <CustomButton
             text="삭제하기"
