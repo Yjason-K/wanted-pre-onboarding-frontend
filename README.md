@@ -1,9 +1,16 @@
-## 원티드 프리온보딩 프론트엔드 - 선발 과제 
+## 원티드 프리온보딩 프론트엔드 - 선발 과제 김영재 (gomgom0324@gmail.com)
 
 
 [배포링크](d3fou63o6mmw18.cloudfront.net)
 
-https://github.com/Yjason-K/wanted-pre-onboarding-frontend/assets/81736873/84204739-1ed7-4126-b4cd-a023cbaaf649
+test_id : kk@kk.co
+test_pwd: 11111111
+
+
+
+https://github.com/Yjason-K/wanted-pre-onboarding-frontend/assets/81736873/f21f091e-b8f4-4071-a827-88bfb78cb17e
+
+
 
 
 ### 로컬에서 사용시
