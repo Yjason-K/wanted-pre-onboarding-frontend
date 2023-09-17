@@ -1,7 +1,7 @@
 ## 원티드 프리온보딩 프론트엔드 - 선발 과제 김영재 (gomgom0324@gmail.com)
 
 
-[배포링크](d3fou63o6mmw18.cloudfront.net)
+[배포링크❗️](https://d3fou63o6mmw18.cloudfront.net/signin)
 
 test_id : kk@kk.co
 test_pwd: 11111111
