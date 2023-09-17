@@ -78,6 +78,7 @@ const ToDo = () => {
         })
           .then((res) => {
             setTodoLists(res.data);
+            setNewTodo("");
           })
           .catch((err) => {
             window.alert("할일을 불러오지 못하였습니다!!");
